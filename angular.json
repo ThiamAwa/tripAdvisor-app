@@ -20,16 +20,36 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
+           
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
+                    {
+                      "glob": "**/*",
+                      "input": "src/assets",
+                      "output": "/assets"
+                    },
+                    {
+                      "glob": "**/*",
+                      "input": "public",
+                      "output": "/"
+                    }
+                  ],
+
             "styles": [
+              "src/assets/niceAdmin/vendor/bootstrap/css/bootstrap.min.css",
+              "src/assets/niceAdmin/vendor/bootstrap-icons/bootstrap-icons.css",
+              "src/assets/niceAdmin/vendor/boxicons/css/boxicons.min.css",
+              "src/assets/niceAdmin/vendor/quill/quill.snow.css",
+              "src/assets/niceAdmin/vendor/quill/quill.bubble.css",
+              "src/assets/niceAdmin/vendor/remixicon/remixicon.css",
+              
+              "src/assets/niceAdmin/vendor/simple-datatables/style.css",
+              "src/assets/niceAdmin/css/style.css",
               "src/styles.css"
+              
             ],
-            "scripts": [],
+           "scripts": [
+  "src/assets/niceAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js"
+],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -90,6 +110,14 @@
               }
             ],
             "styles": [
+              "src/assets/niceAdmin/vendor/bootstrap/css/bootstrap.min.css",
+              "src/assets/niceAdmin/vendor/bootstrap-icons/bootstrap-icons.css",
+              "src/assets/niceAdmin/vendor/boxicons/css/boxicons.min.css",
+              "src/assets/niceAdmin/vendor/quill/quill.snow.css",
+              "src/assets/niceAdmin/vendor/quill/quill.bubble.css",
+              "src/assets/vendor/remixicon/remixicon.css",
+              "src/assets/niceAdmin/vendor/simple-datatables/style.css",
+              "src/assets/niceAdmin/css/style.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -97,5 +125,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "e71f4d91-5b0c-41e1-abd4-511a00c8e6b7"
   }
 }

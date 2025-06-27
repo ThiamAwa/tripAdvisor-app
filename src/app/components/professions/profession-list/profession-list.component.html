@@ -1,0 +1,64 @@
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Liste des professions
+      <div class="text-end mb-3">
+        <a routerLink="/addprofession" class="btn btn-success btn-sm">
+          Ajouter
+        </a>
+      </div>
+    </h5>
+
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Filtrer par code"
+          [(ngModel)]="codeFilter"
+        />
+      </div>
+      <div class="col-md-4">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Filtrer par désignation"
+          [(ngModel)]="designationFilter"
+        />
+      </div>
+    </div>
+
+    <table class="table datatable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Code</th>
+          <th>Désignation</th>
+          <th>Service</th>
+          <th>Adresse</th>
+          <th>Entreprise</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="filteredProfessions().length === 0">
+          <td colspan="7" class="text-center text-muted">
+            Aucune profession trouvée.
+          </td>
+        </tr>
+        <tr *ngFor="let profession of filteredProfessions(); let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ profession.code }}</td>
+          <td>{{ profession.designation }}</td>
+          <td>{{ profession.service }}</td>
+          <td>{{ profession.adresse }}</td>
+          <td>{{ profession.entreprise }}</td>
+          <td>
+            <button class="btn btn-sm btn-primary me-1" [routerLink]="['/editprofession', profession.id]">Modifier</button>
+            <button class="btn btn-sm btn-danger" (click)="profession.id ? onDelete(profession.id) : null">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

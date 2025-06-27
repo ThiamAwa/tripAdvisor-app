@@ -1,0 +1,63 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Liste des utilisateurs
+       <div class="text-end mb-3">
+            <a routerLink="/addutilisateur" class="btn btn-success btn-sm">
+                Ajouter
+            </a>
+        </div>
+    </h5>
+     <div class="row mb-3">
+      <div class="col-md-4">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Filtrer par nom"
+          [(ngModel)]="nameFilter"
+        />
+      </div>
+      <div class="col-md-4">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Filtrer par titre"
+          [(ngModel)]="titleFilter"
+        />
+      </div>
+    </div>
+
+    <table class="table datatable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Titre</th>
+          <th>Prénom</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Actions</th> 
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="filteredUsers().length === 0">
+          <td colspan="6" class="text-center text-muted">
+            Aucun utilisateur trouvé.
+          </td>
+        </tr>
+        <tr *ngFor="let user of filteredUsers(); let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ user.title }}</td>
+          <td>{{ user.firstName }}</td>
+          <td>{{ user.lastName }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <!-- 👇 Boutons d'action -->
+            <button class="btn btn-sm btn-primary me-1" [routerLink]="['/editutilisateur', user.id]">Modifier</button>
+
+            <button class="btn btn-sm btn-danger" (click)="user.id ? onDelete(user.id) : null">Supprimer</button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
