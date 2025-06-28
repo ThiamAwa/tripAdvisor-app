@@ -1,1 +1,41 @@
-<p>profession-edit works!</p>
+<div class="col-lg-8 mx-auto">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Modifier un Profession</h5>
+
+      <form (ngSubmit)="onSubmit()" #professionForm="ngForm" class="row g-3">
+        <div class="col-12">
+          <label for="title" class="form-label">Code</label>
+          <input type="text" class="form-control" id="code" name="code" [(ngModel)]="profession.code" required />
+        </div>
+
+        <div class="col-12">
+          <label for="firstName" class="form-label">Designation</label>
+          <input type="text" class="form-control" id="designation" name="designation" [(ngModel)]="profession.designation" required />
+        </div>
+
+        <div class="col-12">
+          <label for="lastName" class="form-label">Service</label>
+          <input type="text" class="form-control" id="service" name="service" [(ngModel)]="profession.service" required />
+        </div>
+
+        <div class="col-12">
+          <label for="email" class="form-label">Adresse</label>
+          <input type="email" class="form-control" id="adresse" name="adresse" [(ngModel)]="profession.adresse" required />
+        </div>
+
+          <div class="col-12">
+          <label for="email" class="form-label">Entreprise</label>
+          <input type="email" class="form-control" id="entreprise" name="entreprise" [(ngModel)]="profession.entreprise" required />
+        </div>
+        
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary me-2" [disabled]="professionForm.invalid">Modifier</button>
+          <button type="button" class="btn btn-secondary" routerLink="/profession" >Retour</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

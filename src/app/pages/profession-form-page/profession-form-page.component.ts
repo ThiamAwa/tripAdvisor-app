@@ -10,7 +10,13 @@ import { ProfessionFormComponent } from '../../components/professions/profession
 @Component({
   selector: 'app-profession-form-page',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, SidebarComponent,UserListComponent,CommonModule,ProfessionFormComponent ],
+  imports: [RouterOutlet, 
+    HeaderComponent, 
+    FooterComponent, 
+    SidebarComponent,
+    UserListComponent,
+    CommonModule,
+    ProfessionFormComponent ],
   templateUrl: './profession-form-page.component.html',
   styleUrl: './profession-form-page.component.css'
 })

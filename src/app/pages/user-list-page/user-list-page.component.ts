@@ -11,7 +11,13 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-user-list-page',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, SidebarComponent,UserListComponent,CommonModule,RouterModule],
+  imports: [RouterOutlet, 
+    HeaderComponent, 
+    FooterComponent,
+     SidebarComponent,
+     UserListComponent,
+     CommonModule,
+     RouterModule],
   templateUrl: './user-list-page.component.html',
   styleUrls: ['./user-list-page.component.css'] 
 })
